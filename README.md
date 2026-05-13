@@ -13,9 +13,7 @@ aprendizado e disposição para buscar soluções e novos conhecimentos.
 
 # EXPERIÊNCIA
 
-Secretaria de Infraestrutura e Obras, Santo Antônio do Descoberto -
-
-Assistente Administrativo
+Secretaria de Infraestrutura e Obras, Santo Antônio do Descoberto - Assistente Administrativo
 
 DESDE DE JANEIRO DE 2026
 
@@ -24,19 +22,24 @@ e apoio às demandas do setor.
 
 # FORMAÇÃO
 
-Pilotagem de Drone (VANT), Santo Antônio do Descoberto -
-Capacitação
+Pilotagem de Drone (VANT), Santo Antônio do Descoberto - Capacitação
+
 NOVEMBRO DE 2023 - NOVEMBRO DE 2023
+
 Conhecimentos em operação, segurança de voo e realização de filmagens
 aéreas.
+
 Licitação Pública, Santo Antônio do Descoberto - Curso livre
+
 NOVEMBRO DE 2025 - JANEIRO DE 2026
+
 Experiência prática em processos de licitação pública
 
 # FORMAÇÃO ACADÊMICA
 
 Inteligência Artificial, UniCEUB - Brasília - DF - Em andamento
 FEVEREIRO DE 2026
+
 Graduação em andamento, com foco no desenvolvimento de conhecimentos
 teóricos e práticos na área.
 
