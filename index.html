@@ -1,0 +1,316 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Diego Azevedo</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    :root {
+      --bg: #0f0e0c;
+      --surface: #181612;
+      --gold: #c9a84c;
+      --gold-light: #e2c27a;
+      --text: #ede8df;
+      --muted: #7a7060;
+    }
+    html { scroll-behavior: smooth; }
+    body {
+      font-family: 'DM Sans', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      min-height: 100vh;
+      overflow-x: hidden;
+    }
+
+    /* HERO */
+    .hero {
+      min-height: 100vh;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      position: relative;
+    }
+    .hero::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 55% 70% at 75% 50%, rgba(58,107,138,0.10) 0%, transparent 70%),
+                  radial-gradient(ellipse 35% 55% at 25% 80%, rgba(201,168,76,0.07) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .hero-photo {
+      position: relative;
+      overflow: hidden;
+    }
+    .hero-photo img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center 15%;
+      display: block;
+      filter: grayscale(10%) contrast(1.05);
+    }
+    .hero-photo::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to right, transparent 55%, var(--bg) 100%),
+                  linear-gradient(to bottom, transparent 75%, var(--bg) 100%);
+    }
+    .hero-content {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      padding: 80px 64px 80px 40px;
+      position: relative;
+      z-index: 1;
+    }
+    .hero-tag {
+      font-size: 10.5px;
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 22px;
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      animation: fadeUp 0.7s ease 0.1s both;
+    }
+    .hero-tag::before {
+      content: '';
+      width: 30px;
+      height: 1px;
+      background: var(--gold);
+      flex-shrink: 0;
+    }
+    .hero-name {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(40px, 4.5vw, 68px);
+      font-weight: 900;
+      line-height: 1.05;
+      letter-spacing: -0.02em;
+      margin-bottom: 6px;
+      animation: fadeUp 0.7s ease 0.25s both;
+    }
+    .hero-name span { display: block; color: var(--gold-light); }
+    .hero-divider {
+      width: 44px;
+      height: 3px;
+      background: var(--gold);
+      margin: 26px 0;
+      animation: fadeUp 0.7s ease 0.38s both;
+    }
+    .hero-bio {
+      font-size: 15.5px;
+      line-height: 1.82;
+      color: #bfb9ae;
+      max-width: 400px;
+      font-weight: 300;
+      animation: fadeUp 0.7s ease 0.5s both;
+    }
+    .hero-bio strong { color: var(--text); font-weight: 500; }
+    .hero-photo { animation: fadeUp 0.9s ease 0.05s both; }
+
+    /* SKILLS */
+    .skills-section {
+      padding: 90px 72px;
+      position: relative;
+    }
+    .skills-section::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 72px; right: 72px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(122,112,96,0.5), transparent);
+    }
+    .section-label {
+      font-size: 10.5px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-bottom: 14px;
+    }
+    .section-title {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(26px, 2.8vw, 42px);
+      font-weight: 700;
+      margin-bottom: 52px;
+    }
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 2px;
+    }
+    .skill-card {
+      background: var(--surface);
+      padding: 38px 34px;
+      position: relative;
+      overflow: hidden;
+      transition: background 0.3s;
+    }
+    .skill-card:hover { background: #1e1b15; }
+    .skill-card::before {
+      content: '';
+      position: absolute;
+      top: 0; left: 0;
+      width: 3px;
+      height: 0;
+      background: var(--gold);
+      transition: height 0.4s ease;
+    }
+    .skill-card:hover::before { height: 100%; }
+    .skill-icon {
+      width: 46px; height: 46px;
+      border-radius: 10px;
+      background: rgba(201,168,76,0.1);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+      font-size: 21px;
+    }
+    .skill-title {
+      font-family: 'Playfair Display', serif;
+      font-size: 19px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+    .skill-desc {
+      font-size: 13.5px;
+      line-height: 1.75;
+      color: var(--muted);
+      font-weight: 300;
+    }
+
+    /* QUOTE */
+    .quote-section {
+      padding: 72px 80px;
+      text-align: center;
+      position: relative;
+    }
+    .quote-section::before, .quote-section::after {
+      content: '';
+      position: absolute;
+      left: 80px; right: 80px;
+      height: 1px;
+      background: linear-gradient(to right, transparent, rgba(122,112,96,0.5), transparent);
+    }
+    .quote-section::before { top: 0; }
+    .quote-section::after  { bottom: 0; }
+    .quote-mark {
+      font-family: 'Playfair Display', serif;
+      font-size: 88px;
+      color: var(--gold);
+      line-height: 0.4;
+      margin-bottom: 20px;
+      display: block;
+      opacity: 0.35;
+    }
+    .quote-text {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(18px, 2.2vw, 30px);
+      font-style: italic;
+      font-weight: 400;
+      color: var(--text);
+      max-width: 660px;
+      margin: 0 auto;
+      line-height: 1.55;
+    }
+
+    /* FOOTER */
+    footer {
+      padding: 44px 72px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border-top: 1px solid #1e1c18;
+    }
+    .footer-name {
+      font-family: 'Playfair Display', serif;
+      font-size: 17px;
+      font-weight: 700;
+      color: var(--gold-light);
+    }
+    .footer-copy {
+      font-size: 12.5px;
+      color: var(--muted);
+    }
+
+    /* ANIMATION */
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(22px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+
+    /* RESPONSIVE */
+    @media (max-width: 860px) {
+      .hero { grid-template-columns: 1fr; grid-template-rows: 56vh auto; }
+      .hero-photo { height: 56vh; }
+      .hero-photo::after { background: linear-gradient(to bottom, transparent 55%, var(--bg) 100%); }
+      .hero-content { padding: 44px 28px 60px; }
+      .skills-section, footer { padding: 56px 28px; }
+      .skills-section::before { left: 28px; right: 28px; }
+      .skills-grid { grid-template-columns: 1fr; }
+      .quote-section { padding: 56px 28px; }
+      .quote-section::before, .quote-section::after { left: 28px; right: 28px; }
+      footer { flex-direction: column; gap: 10px; text-align: center; }
+    }
+  </style>
+</head>
+<body>
+
+  <section class="hero">
+    <div class="hero-photo">
+      <img src="foto.png" alt="Diego Azevedo" />
+    </div>
+    <div class="hero-content">
+      <p class="hero-tag">Perfil Profissional</p>
+      <h1 class="hero-name">Diego<br><span>Azevedo</span></h1>
+      <div class="hero-divider"></div>
+      <p class="hero-bio">
+        Tenho experiência na área <strong>administrativa</strong>, com atuação na
+        <strong>Secretaria de Infraestrutura e Obras</strong>, onde desenvolvi habilidades
+        com organização, atendimento e rotinas do setor.
+        <br><br>
+        Possuo conhecimento em <strong>licitação pública</strong> e trabalho com
+        <strong>gravação de vídeos e filmagens aéreas com drone</strong>.
+        Sou uma pessoa que gosta de aprender, correr atrás e sempre buscar melhorar no que faz.
+      </p>
+    </div>
+  </section>
+
+  <section class="skills-section">
+    <p class="section-label">Competências</p>
+    <h2 class="section-title">Áreas de Atuação</h2>
+    <div class="skills-grid">
+      <div class="skill-card">
+        <div class="skill-icon">🏛️</div>
+        <h3 class="skill-title">Gestão Administrativa</h3>
+        <p class="skill-desc">Experiência em rotinas administrativas e atendimento, com passagem pela Secretaria de Infraestrutura e Obras, garantindo organização e eficiência nos processos.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">📋</div>
+        <h3 class="skill-title">Licitação Pública</h3>
+        <p class="skill-desc">Conhecimento em processos licitatórios, legislação aplicada e fluxos do setor público, contribuindo para a conformidade e transparência nas contratações.</p>
+      </div>
+      <div class="skill-card">
+        <div class="skill-icon">🎬</div>
+        <h3 class="skill-title">Vídeo & Drone</h3>
+        <p class="skill-desc">Produção audiovisual e filmagens aéreas com drone, unindo técnica e criatividade para entregar conteúdo visual de qualidade em diferentes contextos.</p>
+      </div>
+    </div>
+  </section>
+
+  <div class="quote-section">
+    <span class="quote-mark">"</span>
+    <p class="quote-text">Gosto de aprender, correr atrás e sempre buscar melhorar no que faço.</p>
+  </div>
+
+  <footer>
+    <span class="footer-name">Diego Azevedo</span>
+    <span class="footer-copy">© 2025 · Todos os direitos reservados</span>
+  </footer>
+
+</body>
+</html>
