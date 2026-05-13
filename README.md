@@ -14,8 +14,11 @@ aprendizado e disposição para buscar soluções e novos conhecimentos.
 # EXPERIÊNCIA
 
 Secretaria de Infraestrutura e Obras, Santo Antônio do Descoberto -
+
 Assistente Administrativo
+
 DESDE DE JANEIRO DE 2026
+
 Atuação em rotinas administrativas, organização de documentos, atendimento
 e apoio às demandas do setor.
 
